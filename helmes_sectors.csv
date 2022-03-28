@@ -1,0 +1,79 @@
+1,0,Manufacturing
+2,1,Construction materials
+3,1,Electronics and Optics
+4,1,Food and Beverage
+5,4,Bakery & confectionery products
+6,4,Beverages
+7,4,Fish & fish products
+8,4,Meat & meat products
+9,4,Milk & dairy products
+10,4,Other
+11,4,Sweets & snack food
+12,1,Furniture
+13,12,Bathroom/sauna
+14,12,Bedroom
+15,12,Children’s room
+16,12,Kitchen
+17,12,Living room
+18,12,Office
+19,12,Other (Furniture)
+20,12,Outdoor
+21,12,Project furniture
+22,1,Machinery
+23,22,Machinery components
+24,22,Machinery equipment/tools
+25,22,Manufacture of machinery
+26,22,Maritime
+27,26,Aluminium and steel workboats
+28,26,Boat/Yacht building
+29,26,Ship repair and conversion
+30,22,Metal structures
+31,22,Other
+32,22,Repair and maintenance service
+33,1,Metalworking
+34,33,Construction of metal structures
+35,33,Houses and buildings
+36,33,Metal products
+37,33,Metal works
+38,37,CNC-machining
+39,37,"Forgings, Fasteners"
+40,37,"Gas, Plasma, Laser cutting"
+41,37,"MIG, TIG, Aluminum welding"
+42,1,Plastic and Rubber
+43,42,Packaging
+44,42,Plastic goods
+45,42,Plastic processing technology
+46,45,Blowing
+47,45,Moulding
+48,45,Plastics welding and processing
+49,42,Plastic profiles
+50,1,Printing
+51,50,Advertising
+52,50,Book/Periodicals printing
+53,50,Labelling and packaging printing
+54,1,Textile and Clothing
+55,54,Clothing
+56,54,Textile
+57,1,Wood
+58,57,Other (Wood)
+59,57,Wooden building materials
+60,57,Wooden houses
+61,0,Other
+62,61,Creative industries
+63,61,Energy technology
+64,61,Environment
+65,0,Service
+66,65,Business services
+67,65,Engineering
+68,65,Information Technology and Telecommunications
+69,68,"Data processing, Web portals, E-marketing"
+70,68,"Programming, Consultancy"
+71,68,"Software, Hardware, Consultancy"
+72,68,Telecommunications
+73,65,Tourism
+74,65,Translation services
+75,65,Transport and Logistics
+76,75,Air
+77,75,Rail
+78,75,Road
+79,75,Water
