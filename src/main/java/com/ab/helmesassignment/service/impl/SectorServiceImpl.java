@@ -4,6 +4,8 @@ import com.ab.helmesassignment.dto.SectorDTO;
 import com.ab.helmesassignment.entity.Sector;
 import com.ab.helmesassignment.repository.SectorRepository;
 import com.ab.helmesassignment.service.SectorService;
+import com.github.dozermapper.core.DozerBeanMapperBuilder;
+import com.github.dozermapper.core.Mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ public class SectorServiceImpl implements SectorService {
 
     private final SectorRepository sectorRepository;
 
+    private final Mapper mapper = DozerBeanMapperBuilder.buildDefault();
+
     @Override
     public List<SectorDTO> getSectors() {
 
@@ -23,15 +27,11 @@ public class SectorServiceImpl implements SectorService {
 
         List<Sector> sectorList = sectorRepository.findAll();
 
-        sectorList.forEach(s -> {
-            SectorDTO sectorDTO = new SectorDTO();
-            sectorDTO.setId(s.getId());
-            sectorDTO.setSectorName(s.getSectorName());
-            sectorDTO.setParentId(s.getParentId());
-            sectorDTO.setHasChild(sectorList.stream().anyMatch(s2 -> s2.getParentId() == s.getId()));
+        for (Sector sector : sectorList) {
+            SectorDTO sectorDTO = mapper.map(sector, SectorDTO.class);
+            sectorDTO.setHasChild(sectorList.stream().anyMatch(s2 -> s2.getParentId() == sector.getId()));
             sectorDTOList.add(sectorDTO);
-        });
-
+        }
         return sectorDTOList;
     }
 }
