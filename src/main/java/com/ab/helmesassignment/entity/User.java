@@ -3,6 +3,8 @@ package com.ab.helmesassignment.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -15,9 +17,12 @@ public class User {
     @Column(name = "full_name")
     private String fullName;
 
-    @Column(name = "sector")
-    long sector;
+    private  boolean termAgreed;
 
-    boolean termAgreed;
+    @ManyToMany
+    @JoinTable(name = "user_sector", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "sector_id"))
+    private Set<Sector> sectors = new HashSet<>();
+
+
 
 }

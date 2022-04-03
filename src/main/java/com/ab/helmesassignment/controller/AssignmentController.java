@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,7 +22,7 @@ public class AssignmentController {
 
     @GetMapping("/getSectorList")
     public List<SectorDTO> getSectorList() {
-        return sectorService.getSectors().stream().sorted(Comparator.comparing(SectorDTO::getId)).collect(Collectors.toList());
+        return sectorService.getSectors();
     }
 
     @PostMapping(value = "/saveUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -10,7 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +34,6 @@ public class SectorServiceImpl implements SectorService {
             sectorDTO.setHasChild(sectorList.stream().anyMatch(s2 -> s2.getParentId() == sector.getId()));
             sectorDTOList.add(sectorDTO);
         }
-        return sectorDTOList;
+        return sectorDTOList.stream().sorted(Comparator.comparing(SectorDTO::getId).thenComparing(SectorDTO::getParentId)).collect(Collectors.toList());
     }
 }

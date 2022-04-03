@@ -2,10 +2,9 @@ package com.ab.helmesassignment.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "sectors")
@@ -20,5 +19,6 @@ public class Sector {
 
     @Column(name = "parent_id")
     private long parentId;
+
 
 }

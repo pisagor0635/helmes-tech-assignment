@@ -9,5 +9,4 @@ public class SectorDTO {
     private String sectorName;
     private long parentId;
     private boolean hasChild;
-
 }

@@ -1,8 +1,14 @@
 $(document).ready(function () {
+    $("#frmSector").validate()
     $("#trId").hide()
     $("#frmSector").submit(function (event) {
         event.preventDefault();
         submitForm();
+    });
+
+    $('#chkAggree').bind('change', function () {
+        if ($(this).is(':checked'))
+            document.getElementById("lblCheckValidation").style.display = 'none';
     });
 
     $.ajax({
@@ -12,17 +18,11 @@ $(document).ready(function () {
         success: function (data) {
             data.forEach(function (sector) {
                     if (sector.parentId === 0) {
-                        $('#ddSector').append($('<option>', {
+                        $('#ddSector').append($('<optgroup>', {
                             value: sector.id,
-                            text: sector.sectorName
+                            label: sector.sectorName
                         }));
                     } else {
-                        if (!sector.hasChild && sector.parentId === 1) {
-                            $('#ddSector').append($('<option>', {
-                                value: sector.id,
-                                text: sector.sectorName
-                            }));
-                        }
                         if (!sector.hasChild) {
                             $('#ddSector optgroup[value="' + sector.parentId + '"]').append($('<option>', {
                                 value: sector.id,
@@ -42,13 +42,11 @@ $(document).ready(function () {
             alert(" Can't do because: " + error);
         },
     });
-
 });
 
 function submitForm() {
-    if ($("#txtName").val().length == 0 || !$("#chkAggree").is(":checked")) {
-        alert("All fields are mandatory!")
-        return false;
+    if (!$("#chkAggree").is(":checked")) {
+        document.getElementById("lblCheckValidation").style.display = 'block';
     }
     var id = $("#lblId").text() == "" ? 0 : $("#lblId").text();
 

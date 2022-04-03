@@ -1,0 +1,87 @@
+create table if not exists sectors
+(
+    id          bigint not null
+        primary key,
+    parent_id   bigint,
+    sector_name varchar(255)
+);
+
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (1, 0, 'Manufacturing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (2, 1, 'Construction materials');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (3, 1, 'Electronics and Optics');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (4, 1, 'Food and Beverage');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (5, 4, 'Bakery & confectionery products');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (6, 4, 'Beverages');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (7, 4, 'Fish & fish products');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (8, 4, 'Meat & meat products');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (9, 4, 'Milk & dairy products');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (10, 4, 'Other');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (11, 4, 'Sweets & snack food');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (12, 1, 'Furniture');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (13, 12, 'Bathroom/sauna');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (14, 12, 'Bedroom');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (15, 12, 'Children’s room');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (16, 12, 'Kitchen');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (17, 12, 'Living room');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (18, 12, 'Office');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (19, 12, 'Other (Furniture)');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (20, 12, 'Outdoor');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (21, 12, 'Project furniture');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (22, 1, 'Machinery');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (23, 22, 'Machinery components');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (24, 22, 'Machinery equipment/tools');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (25, 22, 'Manufacture of machinery');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (26, 22, 'Maritime');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (27, 26, 'Aluminium and steel workboats');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (28, 26, 'Boat/Yacht building');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (29, 26, 'Ship repair and conversion');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (30, 22, 'Metal structures');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (31, 22, 'Other');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (32, 22, 'Repair and maintenance service');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (33, 1, 'Metalworking');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (34, 33, 'Construction of metal structures');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (35, 33, 'Houses and buildings');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (36, 33, 'Metal products');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (37, 33, 'Metal works');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (38, 37, 'CNC-machining');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (39, 37, 'Forgings, Fasteners');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (40, 37, 'Gas, Plasma, Laser cutting');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (41, 37, 'MIG, TIG, Aluminum welding');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (42, 1, 'Plastic and Rubber');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (43, 42, 'Packaging');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (44, 42, 'Plastic goods');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (45, 42, 'Plastic processing technology');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (46, 45, 'Blowing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (47, 45, 'Moulding');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (48, 45, 'Plastics welding and processing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (49, 42, 'Plastic profiles');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (50, 1, 'Printing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (51, 50, 'Advertising');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (52, 50, 'Book/Periodicals printing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (53, 50, 'Labelling and packaging printing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (54, 1, 'Textile and Clothing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (55, 54, 'Clothing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (56, 54, 'Textile');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (57, 1, 'Wood');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (58, 57, 'Other (Wood)');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (59, 57, 'Wooden building materials');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (60, 57, 'Wooden houses');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (61, 0, 'Other');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (62, 61, 'Creative industries');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (63, 61, 'Energy technology');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (64, 61, 'Environment');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (65, 0, 'Service');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (66, 65, 'Business services');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (67, 65, 'Engineering');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (68, 65, 'Information Technology and Telecommunications');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (69, 68, 'Data processing, Web portals, E-marketing');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (70, 68, 'Programming, Consultancy');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (71, 68, 'Software, Hardware, Consultancy');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (72, 68, 'Telecommunications');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (73, 65, 'Tourism');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (74, 65, 'Translation services');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (75, 65, 'Transport and Logistics');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (76, 75, 'Air');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (77, 75, 'Rail');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (78, 75, 'Road');
+INSERT INTO public.sectors (id, parent_id, sector_name) VALUES (79, 75, 'Water');

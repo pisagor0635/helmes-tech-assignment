@@ -7,7 +7,7 @@ public class UserDTO {
 
     private long id;
     private String fullName;
-    long sector;
-    boolean termAgreed;
+    private boolean termAgreed;
+    long[] sector;
 
 }
