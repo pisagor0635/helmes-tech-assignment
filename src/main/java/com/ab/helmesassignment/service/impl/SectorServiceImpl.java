@@ -27,13 +27,14 @@ public class SectorServiceImpl implements SectorService {
 
         List<SectorDTO> sectorDTOList = new ArrayList<>();
 
-        List<Sector> sectorList = sectorRepository.findAll();
+        List<Sector> sectorList = sectorRepository.findAllByOrderByIdAscParentIdAsc();
+
 
         for (Sector sector : sectorList) {
             SectorDTO sectorDTO = mapper.map(sector, SectorDTO.class);
             sectorDTO.setHasChild(sectorList.stream().anyMatch(s2 -> s2.getParentId() == sector.getId()));
             sectorDTOList.add(sectorDTO);
         }
-        return sectorDTOList.stream().sorted(Comparator.comparing(SectorDTO::getId).thenComparing(SectorDTO::getParentId)).collect(Collectors.toList());
+        return sectorDTOList;
     }
 }
